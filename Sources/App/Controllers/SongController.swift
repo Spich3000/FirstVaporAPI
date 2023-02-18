@@ -11,7 +11,8 @@ import Vapor
 struct SongController: RouteCollection {
     // /songs route use
     func boot(routes: RoutesBuilder) throws {
-        let songs = routes.grouped("songs")
+        // name of /"nameRoute"
+        let songs = routes.grouped("opa")
         songs.get(use: index)
         songs.post(use: create)
     }
