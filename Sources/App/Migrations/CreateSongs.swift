@@ -8,6 +8,7 @@
 import Fluent
 
 struct CreateSongs: Migration {
+    
     func prepare(on database: FluentKit.Database) -> NIOCore.EventLoopFuture<Void> {
         return database.schema("songs")
             .id()
@@ -18,8 +19,6 @@ struct CreateSongs: Migration {
     func revert(on database: FluentKit.Database) -> NIOCore.EventLoopFuture<Void> {
         return database.schema("songs").delete()
     }
-    
-    
     
     
 }
